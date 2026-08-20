@@ -1,10 +1,12 @@
-import React from 'react'
-
 export default function About() {
   return (
-    <section className="max-w-4xl mx-auto p-6">
-      <h1 className="text-3xl font-bold mb-4">About Us</h1>
-      <p className="text-gray-700">We are a community of students and professionals in chemical sciences focused on research, outreach, and partnerships.</p>
+    <section className="min-h-screen bg-[#100a22] px-6 pb-16 pt-36 text-white">
+      <div className="mx-auto max-w-4xl">
+        <h1 className="mb-4 text-3xl font-bold text-[#ead9ec]">About Us</h1>
+        <p className="text-[#efe3f0]/80">
+          We are a community of students and professionals in chemical sciences focused on research, outreach, and partnerships.
+        </p>
+      </div>
     </section>
   )
 }
