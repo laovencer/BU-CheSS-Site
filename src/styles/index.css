@@ -7,5 +7,6 @@ html, body, #root {
 }
 
 body {
-  @apply bg-gray-50 text-gray-900;
+  @apply bg-[#100a22] text-white;
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
 }
