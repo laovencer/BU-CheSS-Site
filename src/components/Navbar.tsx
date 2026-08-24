@@ -28,7 +28,7 @@ export default function Navbar() {
         </Link>
 
         <Link to="/about" className={navLinkClasses}>
-          About
+          Directory
         </Link>
 
         <Link to="/partners" className={navLinkClasses}>
