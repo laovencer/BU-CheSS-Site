@@ -1,16 +1,18 @@
+import { Route, Routes } from 'react-router-dom'
+
 import Navbar from './components/Navbar'
 import Home from './pages/Home'
 import About from './pages/About'
 import Partners from './pages/Partners'
 import Contact from './pages/Contact'
 import NotFound from './pages/NotFound'
-import { Routes, Route } from 'react-router-dom'
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-[#100a22]">
+    <div className="min-h-dvh w-full bg-[#100a22]">
       <Navbar />
-      <main>
+
+      <main className="w-full">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
