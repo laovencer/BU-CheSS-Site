@@ -18,14 +18,14 @@ export default function Home() {
       }}
     >
       {/* Hero content */}
-      <div className="relative z-10 mx-auto flex min-h-dvh w-full max-w-[1092px] items-center px-6 pt-24 sm:px-10 lg:px-12">
+      <div className="relative z-10 mx-auto w-full max-w-[1092px] px-6 pt-28 sm:px-10 sm:pt-32 lg:px-12 lg:pt-36">
         <div className="w-full max-w-[720px]">
           {/* Organization identity */}
-          <div className="flex items-center gap-4 sm:gap-5 lg:gap-6">
+          <div className="flex items-start gap-4 sm:gap-5 lg:gap-6">
             <img
               src={logo}
               alt="Bicol University Chemical Science Society logo"
-              className="h-24 w-24 shrink-0 object-contain sm:h-32 sm:w-32 lg:h-36 lg:w-36"
+              className="h-24 w-24 shrink-0 object-contain sm:h-32 sm:w-32 lg:h-40 lg:w-40"
             />
 
             <div className="min-w-0">
@@ -44,7 +44,7 @@ export default function Home() {
           </div>
 
           {/* Hero actions */}
-          <div className="mt-5 flex flex-wrap gap-3 sm:pl-[132px] lg:pl-[168px]">
+          <div className="mt-6 flex flex-wrap gap-3 sm:mt-8 sm:pl-[132px] lg:pl-[168px]">
             <Link to="/about" className={`${ctaLinkBase} px-5`}>
               Organization Overview
             </Link>
