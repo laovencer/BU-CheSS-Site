@@ -19,8 +19,8 @@ body {
 }
 
 body {
-  @apply bg-[#100a22] text-white;
   font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  min-height: 100dvh;
 }
 
 img {

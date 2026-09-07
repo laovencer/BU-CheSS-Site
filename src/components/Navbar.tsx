@@ -1,8 +1,17 @@
-import { Link } from 'react-router-dom'
+import { useState } from 'react'
+import { Link, useLocation } from 'react-router-dom'
+import { motion } from 'motion/react'
 
-const navLinkClasses = 'transition-colors hover:text-white'
+const navItems = [
+  { to: '/', label: 'Home' },
+  { to: '/about', label: 'Directory' },
+  { to: '/partners', label: 'Partners' },
+]
 
 export default function Navbar() {
+  const { pathname } = useLocation()
+  const [hoveredPath, setHoveredPath] = useState<string | null>(null)
+
   return (
     <header
       className="
@@ -22,18 +31,35 @@ export default function Navbar() {
       <nav
         className="hidden items-center gap-8 text-base font-semibold sm:flex lg:gap-12 lg:text-lg xl:gap-16"
         aria-label="Main navigation"
+        onMouseLeave={() => setHoveredPath(null)}
       >
-        <Link to="/" className="border-b-4 border-[#c68de5] pb-1 text-white">
-          Home
-        </Link>
+        {navItems.map((item) => {
+          const isActive = pathname === item.to
+          const isHovered = hoveredPath === item.to
 
-        <Link to="/about" className={navLinkClasses}>
-          Directory
-        </Link>
+          return (
+            <Link
+              key={item.to}
+              to={item.to}
+              onMouseEnter={() => setHoveredPath(item.to)}
+              className={`relative pb-1 transition-colors ${
+                isActive ? 'text-white' : 'text-[#f2eaf5]/80 hover:text-white'
+              }`}
+            >
+              {item.label}
 
-        <Link to="/partners" className={navLinkClasses}>
-          Partners
-        </Link>
+              {/* Underline: grows/shrinks in place from center, per link — never travels between links */}
+              <motion.span
+                className={`absolute inset-x-0 bottom-0 h-[3px] origin-center rounded-full ${
+                  isActive ? 'bg-[#c68de5]' : 'bg-[#c68de5]/50'
+                }`}
+                initial={false}
+                animate={{ scaleX: isActive || isHovered ? 1 : 0 }}
+                transition={{ duration: 0.25, ease: 'easeOut' }}
+              />
+            </Link>
+          )
+        })}
       </nav>
 
       {/* Partnership CTA */}
