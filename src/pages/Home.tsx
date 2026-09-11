@@ -7,41 +7,49 @@ const ctaLinkBase =
 
 export default function Home() {
   return (
-    <section className="relative isolate flex min-h-dvh w-full items-center overflow-hidden text-white">
-      <div className="relative z-10 mx-auto w-full max-w-[1092px] px-6 pt-28 sm:px-10 sm:pt-32 lg:px-12 lg:pt-36">
-        <div className="w-full max-w-[880px]">
+    <section className="relative isolate flex min-h-dvh w-full items-start overflow-hidden text-white">
+      <div className="relative z-10 mx-auto w-full translate-y-12 px-6 pt-20 sm:px-10 sm:pt-24 lg:px-20 lg:pt-32 lg:translate-y-40">
+        <div className="w-full">
           {/* Organization identity */}
-          <div className="flex items-start gap-5 sm:gap-6 lg:gap-8">
+          <div className="grid grid-cols-[auto_1fr] items-start gap-6 sm:gap-8 lg:gap-10">
+            {/* Logo */}
             <img
               src={logo}
               alt="Bicol University Chemical Science Society logo"
-              className="h-28 w-28 shrink-0 object-contain sm:h-40 sm:w-40 lg:h-52 lg:w-52"
+              className="h-36 w-36 shrink-0 object-contain sm:h-68 sm:w-68 lg:h-[380px] lg:w-[380px]"
             />
 
-            <div className="min-w-0">
-              <p className="text-2xl font-semibold leading-tight tracking-tight sm:text-4xl lg:text-[42px]">
+            {/* Organization information + actions */}
+            <div className="min-w-0 pt-1 sm:pt-2 lg:pt-4">
+              <p className="text-3xl font-semibold leading-tight tracking-tight sm:text-6xl lg:text-[62px]">
                 Bicol University
               </p>
 
-              <h1 className="mt-1 text-3xl font-extrabold leading-[1.08] tracking-tight text-[#ead9ec] sm:mt-2 sm:text-5xl lg:text-[46px]">
+              <h1 className="mt-2 text-4xl font-extrabold leading-[1.05] tracking-tight text-[#ead9ec] sm:mt-3 sm:text-7xl lg:text-[68px]">
                 CHEMICAL SCIENCE SOCIETY
               </h1>
 
-              <p className="mt-2 text-base leading-tight text-[#efe3f0] sm:mt-3 sm:text-lg lg:text-[22px]">
+              <p className="mt-3 text-lg leading-tight text-[#efe3f0] sm:mt-4 sm:text-xl lg:text-[30px]">
                 for the advancement of chemical sciences
               </p>
+
+              {/* Hero actions */}
+              <div className="mt-6 flex flex-wrap gap-4 sm:mt-8 lg:mt-9">
+                <Link
+                  to="/about"
+                  className={`${ctaLinkBase} px-7 py-3.5 text-sm sm:px-8 sm:py-4 sm:text-base`}
+                >
+                  Organization Overview
+                </Link>
+
+                <Link
+                  to="/partners"
+                  className={`${ctaLinkBase} px-8 py-3.5 text-sm sm:px-9 sm:py-4 sm:text-base`}
+                >
+                  Flagship Events
+                </Link>
+              </div>
             </div>
-          </div>
-
-          {/* Hero actions */}
-          <div className="mt-6 flex flex-wrap gap-3 sm:mt-8 sm:pl-[184px] lg:mt-10 lg:pl-[240px]">
-            <Link to="/about" className={`${ctaLinkBase} px-5`}>
-              Organization Overview
-            </Link>
-
-            <Link to="/partners" className={`${ctaLinkBase} px-6`}>
-              Flagship Events
-            </Link>
           </div>
         </div>
       </div>
