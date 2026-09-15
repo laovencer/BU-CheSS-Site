@@ -1,7 +1,12 @@
 module.exports = {
   content: ['./index.html', './src/**/*.{ts,tsx}'],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ['"Kumbh Sans"', 'sans-serif'],
+        heading: ['"Monda"', 'sans-serif'],
+      },
+    },
   },
   plugins: [],
 }
