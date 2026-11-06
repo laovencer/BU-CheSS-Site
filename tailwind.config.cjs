@@ -5,6 +5,7 @@ module.exports = {
       fontFamily: {
         sans: ['"Kumbh Sans"', 'sans-serif'],
         heading: ['"Monda"', 'sans-serif'],
+        monda: ['"Monda"', 'sans-serif'],
       },
     },
   },
